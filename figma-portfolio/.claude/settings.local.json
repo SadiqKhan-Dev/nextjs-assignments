@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"D:\\\\REACT-SMIT\\\\nextjs-assignments\\\\figma-portfolio\" && npm install framer-motion 2>&1 | tail -5)",
+      "Bash(cd \"D:\\\\REACT-SMIT\\\\nextjs-assignments\\\\figma-portfolio\" && npm run build 2>&1 | tail -20)"
+    ]
+  }
+}

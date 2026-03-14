@@ -1,75 +1,148 @@
-// // /components/Projects.tsx
-// const Projects = () => {
-//   return (
-//     <section id="projects" className="p-8 bg-gray-100 text-center">
-//       <h2 className="text-3xl font-bold mb-4">Projects</h2>
-      
-//       {/* GIAIC Student Card */}
-//       <div className="mb-4">
-//         <h3 className="text-xl font-semibold">GIAIC Student Card</h3>
-//         <p className="text-sm">
-//           A web-based student card application that allows users to view and manage student profiles. This project demonstrates skills in UI design and data handling with React and TailwindCSS.
-//         </p>
-//       </div>
+"use client";
 
-//       {/* Countdown Timer */}
-//       <div className="mb-4">
-//         <h3 className="text-xl font-semibold">Countdown Timer</h3>
-//         <p className="text-sm">
-//           A simple yet functional countdown timer built using React and NextJs. Users can set a target time, and the app counts down until the specified event, making it ideal for events and deadlines.
-//         </p>
-//       </div>
+import { motion } from "framer-motion";
 
-//       {/* Weather Widget */}
-//       <div className="mb-4">
-//         <h3 className="text-xl font-semibold">Weather Widget</h3>
-//         <p className="text-sm">
-//           An interactive weather widget that provides real-time weather data. This project utilizes APIs to fetch data and displays it in an easy-to-read format, showcasing skills in API integration and data visualization.
-//         </p>
-//       </div>
+const projects = [
+  {
+    title: "GIAIC Student Card",
+    desc: "A web-based student card application for viewing and managing student profiles with a clean UI.",
+    tech: ["React", "TailwindCSS", "Next.js"],
+    icon: "🪪",
+    color: "from-purple-600 to-violet-700",
+    glow: "shadow-purple-500/20",
+    live: "https://giaic-student-card.vercel.app",
+  },
+  {
+    title: "Countdown Timer",
+    desc: "A functional countdown timer built with React & Next.js — perfect for events and deadlines.",
+    tech: ["Next.js", "React", "TypeScript"],
+    icon: "⏱️",
+    color: "from-cyan-600 to-blue-700",
+    glow: "shadow-cyan-500/20",
+    live: "https://countdown-timer.vercel.app",
+  },
+  {
+    title: "Weather Widget",
+    desc: "Real-time weather data using an external API — displays temperature, humidity, and conditions.",
+    tech: ["Next.js", "API", "Tailwind"],
+    icon: "🌤️",
+    color: "from-pink-600 to-rose-700",
+    glow: "shadow-pink-500/20",
+    live: "https://weather-widget.vercel.app",
+  },
+  {
+    title: "Birthday Wish App",
+    desc: "A fun, customizable birthday message creator with animated designs to spread joy.",
+    tech: ["React", "Framer Motion", "CSS"],
+    icon: "🎂",
+    color: "from-amber-500 to-orange-600",
+    glow: "shadow-amber-500/20",
+    live: "https://birthday-wish-app.vercel.app",
+  },
+];
 
-//       {/* Birthday Wish App */}
-//       <div className="mb-4">
-//         <h3 className="text-xl font-semibold">Birthday Wish App</h3>
-//         <p className="text-sm">
-//           A fun application that allows users to create and send birthday wishes. Users can customize messages and designs, making it a perfect tool for spreading joy on someone’s special day.
-//         </p>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Projects;
-
-// /components/Projects.tsx
-import React from "react";
-import Link from "next/link";
-const Projects = () => {
+export default function Projects() {
   return (
-    <section id="projects" className="p-8 bg-gradient-to-r from-black to-gray-300 text-center">
-      <h2 className="text-4xl font-extrabold mb-6 text-black">Projects</h2>
+    <section
+      id="projects"
+      className="relative py-24 px-4 sm:px-8 bg-[#080818] overflow-hidden"
+    >
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-pink-900/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-900/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="mb-6 shadow-lg p-6 rounded-lg bg-white hover:bg-blue-50 transition">
-        <h3 className="text-2xl font-semibold text-blue-600">GIAIC Student Card</h3>
-        <p className="text-gray-700">A web-based student card application that allows users to view and manage student profiles. This project demonstrates skills in UI design and data handling with React and TailwindCSS.</p>
-      </div>
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Title */}
+        <div className="text-center mb-16">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-pink-400 font-semibold text-sm uppercase tracking-widest mb-3"
+          >
+            What I&apos;ve Built
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-extrabold text-white"
+          >
+            My Projects
+          </motion.h2>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 origin-left"
+          />
+        </div>
 
-      <div className="mb-6 shadow-lg p-6 rounded-lg bg-white hover:bg-blue-50 transition">
-        <h3 className="text-2xl font-semibold text-blue-600">Countdown Timer</h3>
-        <p className="text-gray-700">A simple yet functional countdown timer built using React and NextJs. Users can set a target time, and the app counts down until the specified event, making it ideal for events and deadlines.</p>
-      </div>
+        {/* Projects Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          {projects.map((project, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              whileHover={{ y: -8, scale: 1.01 }}
+              className={`group relative glass rounded-2xl overflow-hidden border border-white/10 hover:border-purple-500/40 transition-all shadow-xl ${project.glow}`}
+            >
+              {/* Top accent line */}
+              <div className={`h-1 w-full bg-gradient-to-r ${project.color}`} />
 
-      <div className="mb-6 shadow-lg p-6 rounded-lg bg-white hover:bg-blue-50 transition">
-        <h3 className="text-2xl font-semibold text-blue-600">Weather Widget</h3>
-        <p className="text-gray-700">An interactive weather widget that provides real-time weather data. This project utilizes APIs to fetch data and displays it in an easy-to-read format, showcasing skills in API integration and data visualization.</p>
-      </div>
+              <div className="p-6">
+                {/* Icon + Title */}
+                <div className="flex items-start gap-4 mb-4">
+                  <div
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} flex items-center justify-center text-2xl shadow-lg flex-shrink-0`}
+                  >
+                    {project.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
+                </div>
 
-      <div className="shadow-lg p-6 rounded-lg bg-white hover:bg-blue-50 transition">
-        <h3 className="text-2xl font-semibold text-blue-600">Birthday Wish App</h3>
-        <p className="text-gray-700">A fun application that allows users to create and send birthday wishes. Users can customize messages and designs, making it a perfect tool for spreading joy on someone’s special day.</p>
+                <p className="text-gray-400 text-sm leading-relaxed mb-5">{project.desc}</p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/5 border border-white/15 text-gray-300"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Link */}
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className={`inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r ${project.color} text-white text-sm font-semibold shadow-lg transition-shadow hover:shadow-xl`}
+                >
+                  <span>Live Demo</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </motion.a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
-};
-
-export default Projects;
+}
